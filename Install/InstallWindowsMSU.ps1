@@ -37,7 +37,10 @@
 
     .EXAMPLE
         cd C:\Users\User\Desktop\Scripts
-        .\InstallKb.ps1 C:\Users\v-dhbala\Desktop\Scripts\servers.txt C:\Users\v-dhbala\Desktop\Scripts\notDone.txt C:\Users\v-dhbala\Desktop\Scripts\PSTools C:\users\v-dhbala\Desktop\KB.msu
+        .\InstallKb.ps1 C:\Users\User\Desktop\Scripts\servers.txt C:\Users\User\Desktop\Scripts\notDone.txt C:\Users\User\Desktop\Scripts\PSTools C:\users\User\Desktop\KB.msu
+
+    .NOTE
+        As currently implemented, the name of the .msu needs to be "KB.msu". Can be changed to be more accomodating of course.
 #>
 
 
@@ -83,6 +86,7 @@ foreach ($Server in $Servers){
             Write-Host "Installing KB from \\$Server\c$\"
             & (Join-Path $psExecPath "PsExec.exe") -s \\$Server wusa.exe c:\KB.msu /quiet /norestart
 
+            #These exit codes are official Windows KB exit codes.
             switch ($LASTEXITCODE) {
                 3010 {
                     Write-Host -ForegroundColor Green "Install Success, needs a reboot."
