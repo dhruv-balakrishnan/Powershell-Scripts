@@ -1,0 +1,52 @@
+{
+  "collections": [
+	{
+		"name" : "CollectionA",
+		"active" : "true",
+		"pools": 
+		[
+			{
+				"name": "Lab X",
+				"active" : "true",
+				"id":  156,
+				"maps": [
+					{
+						"agent": "VMName",
+						"active" : "true"
+					}
+				]
+			}, 
+			{
+				"name": "Lab Y",
+				"active" : "false",
+				"id":  64,
+				"maps": [
+					{
+						"agent": "VMName",
+						"active" : "true"
+					}
+				]
+			}
+		]
+	},
+	
+	{
+		"name" : "CollectionB",
+		"active" : "false",
+		"pools": 
+		[
+			{
+				"name": "Lab Z",
+				"active" : "true",
+				"id":  12,
+				"maps": [
+					{
+						"agent": "VMName",
+						"active" : "true"
+					}
+				]
+			}
+		]
+	}
+  ]
+}
